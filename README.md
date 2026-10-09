@@ -1,6 +1,12 @@
 # PhishLens – AI Phishing & Scam Detector 🛡️
 
-PhishLens is a cybersecurity defense application built with **Jetpack Compose (Kotlin)** on Android and a **Python FastAPI** backend with **SQLite**. It empowers everyday users and cybersecurity analysts to detect and deconstruct suspicious SMS messages, emails, phishing URLs, and screenshots—**both online and completely offline (air-gapped)**.
+PhishLens is a cybersecurity defense application built with **Jetpack Compose (Kotlin)** on Android, a **Web Edition (HTML5/CSS3/ES6)**, and a companion **Python FastAPI** backend with **SQLite**. It empowers everyday users and cybersecurity analysts to detect and deconstruct suspicious SMS messages, emails, phishing URLs, and screenshots—**both online and completely offline (air-gapped)**.
+
+---
+
+## 🌟 Available Form Factors
+1. **Native Android App (APK)**: Running on Android devices and the AI Studio streaming emulator with Jetpack Compose, on-device Room SQLite database, and ML Kit OCR.
+2. **Web Edition (Website)**: Standalone web application located in `/web` and served directly through FastAPI at `http://localhost:8000/`. Runs on all desktop and mobile web browsers with zero installation.
 
 ---
 
@@ -84,6 +90,32 @@ The API will now be live:
 ```bash
 pytest test_api.py -v
 ```
+
+---
+
+### 3. Running the Web Edition (Website)
+
+You can run the PhishLens website in two simple ways:
+
+#### Option A: Served via FastAPI (Recommended)
+Starting the FastAPI server automatically serves the website at the root URL:
+```bash
+cd backend
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```
+Open **[http://localhost:8000](http://localhost:8000)** in your browser!
+
+#### Option B: Standalone Static Server (Node.js / Python / Vercel)
+The web application is also completely self-contained in `/web` with client-side offline heuristics:
+```bash
+# Using Python built-in HTTP server:
+cd web
+python3 -m http.server 3000
+
+# Or using Node.js / npx serve:
+npx serve web -l 3000
+```
+Open **[http://localhost:3000](http://localhost:3000)** in any browser. It works 100% offline using the in-browser JavaScript detection engine!
 
 ---
 
