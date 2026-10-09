@@ -1,0 +1,6 @@
+{
+  "name": "PhishLens",
+  "description": "AI Phishing & Scam Detector for suspicious SMS, emails, URLs, and screenshots with explainable risk scoring, rule-based heuristics, and offline protection.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
